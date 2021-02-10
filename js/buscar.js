@@ -7,15 +7,15 @@ $(document).ready(function() {
         }
     });
     $('#login').on('click', function() {
-        $("login_form").show();
-        $("registro_form").hide();
+        $("#login_form").show();
+        $("#registro_form").hide();
     });
     $('#registro').on('click', function() {
-        $("registro_form").show();
+        $("#registro_form").show();
         $("#login_form").hide();
     });
     // Registro
-    $('#butSalvar').on('click', function() {
+    $('#btnSalvar').on('click', function() {
         var v = document.getElementById("error");
         emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
         var nome = $('#nome').val();
@@ -25,6 +25,7 @@ $(document).ready(function() {
         var password = $('#password').val();
         var confirmar_password = $('#confirmar_password').val();
         setTimeout(function() { $("#error").fadeOut(1000); }, 5000);
+
 
         if (nome == "" && email == "" && telefone == "" && password == "") {
             $("error").show();
@@ -91,7 +92,7 @@ $(document).ready(function() {
     });
     // Login
 
-    $('#butlogin').on('click', function() {
+    $('#btnLogin').on('click', function() {
         $('#error1').hide();
         var v = document.getElementById("error1");
         var usuarionome = $('#email_log').val();
@@ -114,12 +115,14 @@ $(document).ready(function() {
                 success: function(dataResult) {
                     var dataResult = JSON.parse(dataResult);
                     if (dataResult.statusCode == 200) {
-                        location.href = "home,php";
+                        location.href = "home.php";
+
                     } else if (dataResult.statusCode == 201) {
                         $("#error1").show();
-                        $('#error_show12').html('E-mail ou Senha inválidos!');
-                        v.className += "alert-danger";
+                        $('#error_show12').html('E-mail ou Senha Inválidos !');
+                        v.className += " alert-danger";
                     }
+
                 }
             });
         }
