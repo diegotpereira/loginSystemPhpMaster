@@ -16,10 +16,10 @@
                     <button type="button" class="btn btn-primary" id="login">Logar</button>
                 </div>
             </div>
-            <form id="registro_form" name="form_login" method="POST">
+            <form id="registro_form" name="form1" method="post">
                 <div class="alert" id="error" role="alert" style="display: none;">
                     <div><a href="#" class="close" data-dismiss="alert" aria-label="close">X</a></div>
-                    <div class="erro_show" id="error_show1"></div>
+                    <div class="error_show" id="error_show1"></div>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="nome" placeholder="Por Favor Digite seu Nome" name="nome">
@@ -42,10 +42,10 @@
                 </div>
                 <input type="password" class="form-control" id="confirmar_password" placeholder="Por Favor confirme sua senha" name="confirmar_password">
                 <div class="mb-3"></div>                    
-                <input type="button" name="salvar" class="btn btn-primary" value="Registrar" id="butSalvar">
+                <input type="button" name="salvar" class="btn btn-primary" value="Registrar" id="btnSalvar">
             </form>
-            <form id="login_form" name="form_login" method="POST" style="display: none;">
-               <div class="alert" id="error1" role="alert" style="display: none;">
+            <form id="login_form" name="form1" method="post" style="display:none;">
+               <div class="alert" id="error1" role="alert" style="display:none;">
                   <div><a href="#" class="close" data-dismiss="alert" aria-label="close">X</a></div>
                   <div class="error_show" id="error_show12"></div>
                </div>
@@ -57,10 +57,10 @@
                    <label for="pwd">Senha:</label>
                    <input type="password" class="form-control" id="password_log" placeholder="Password" name="password">
                </div>
-               <input type="button" name="salvar" class="btn btn-primary" value="Login" id="butLogin">
+               <input type="button" name="salvar" class="btn btn-primary" value="Login" id="btnLogin">
             </form>
         </div>
     </div>
 </body>
 </html>
-<script src="js/fetch.js"></script>
+<script src="js/buscar.js"></script>

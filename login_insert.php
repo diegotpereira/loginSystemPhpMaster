@@ -11,7 +11,7 @@
         if (!empty($nome) && !empty($email) && !empty($usuarionome) && !empty($telefone) && !empty($password)) {
             # code...
             $duplicate = mysqli_query($conexao, "SELECT * FROM TAB_USUARIOS WHERE email = '$email'");
-            $duplicate1= mysqli_query($conexao, "SELECT * FROM TAB_USUARISO WHERE usuarionome = '$usuarionome'");
+            $duplicate1= mysqli_query($conexao, "SELECT * FROM TAB_USUARIOS WHERE usuarionome = '$usuarionome'");
             if (mysqli_num_rows($duplicate)>0) {
                 # code...
                 echo json_encode(array("statusCode"=>201));
@@ -41,7 +41,7 @@
         # code...
         $usuarionome = $_POST['usuarionome'];
         $password = $_POST['password'];
-        $check = mysqli_query($conexao,"SELECT * FROM TAB_USUARIOS WHERE usuarionome= '$usuarionome' AND password='".md5($password)."'");
+        $check = mysqli_query($conexao,"SELECT * FROM tab_usuarios WHERE usuarionome= '$usuarionome' AND password='".md5($password)."'");
         if (mysqli_num_rows($check)>0) {
             # code...
             $_SESSION['usuarionome']=$usuarionome;
